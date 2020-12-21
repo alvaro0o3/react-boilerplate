@@ -4,4 +4,8 @@ import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-module.hot.accept(); // Activa el HMR
+const key = process.env.NODE_ENV;
+
+if (key === 'development') {
+  module.hot.accept(); // Activa el HMR
+}

@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "builddev": "webpack --mode development",
-    "start": "webpack serve",
-    "dev": "webpack serve --mode development --env development"
+    "start": "webpack serve --config webpack.config.dev.js",
+    "start:prod": "http-server ./dist",
+    "build": "webpack --config webpack.config.prod.js",
+    "builddev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,8 @@
   "homepage": "https://github.com/alvaro0o3/webpack-react#readme",
   "dependencies": {
     "core-js": "^3.8.1",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^6.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -39,12 +41,16 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "hot-module-replacement": "^3.0.4",
     "html-webpack-plugin": "^4.5.0",
+    "http-server": "^0.12.3",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.10.3",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
-  }
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.7.2"
+  },
+  "browserslist": ">0.25%, not dead, not ie 11"
 }
